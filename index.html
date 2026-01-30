@@ -212,7 +212,7 @@ async function buatPanel(){
   try{
     const u=username.value.toLowerCase();
     const r=await fetch(
-      `https://api.resellergaming.my.id/pterodactyl/addpanel?domain=${DOMAIN}&plta=${PLTA}&username=${u}&ram=${paket.value}&disk=${paket.value}&cpu=100`
+      `https://api.resellergaming.my.id/pterodactyl/addpanel?domain=${DOMAIN}&plta=${PLTA}&username=${u}&ram=${paket.value}&disk=${paket.value}&cpu=0`
     );
     const d=await r.json();
     if(!d.user) throw 0;
