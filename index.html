@@ -165,7 +165,7 @@ function getCPUValue(storageValue) {
     "0": 0          // UNLIMITED = 0% CPU
   };
   
-  return storageMap[storageValue] || 100; // Default 100% jika tidak ditemukan
+  return storageMap[storageValue] || 0; // Default 100% jika tidak ditemukan
 }
 
 function checkAutoLogout() {
