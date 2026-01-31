@@ -32,17 +32,17 @@ input,select{width:100%;padding:14px;margin:8px 0 14px;border-radius:14px;border
 button{width:100%;padding:14px;border-radius:16px;border:none;background:rgba(0,0,0,.6);color:#fff;font-weight:600;margin-top:6px}
 .btn-outline{background:transparent;border:1px solid #fff}
 
-/* WA BUTTON */
-.wa-float{position:fixed;bottom:20px;right:16px;width:55px;height:55px;background:rgba(0,0,0,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.4);z-index:999}
-.wa-float img{width:30px;height:30}
 
-/* BACKGROUND VIDEO */
+.wa-float{position:fixed;bottom:20px;right:16px;width:55px;height:55px;background:rgba(0,0,0,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.4);z-index:999}
+.wa-float img{width:30px;height:30px}
+
+
 #bgVideo{position:fixed;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:blur(3px) brightness(.6);z-index:-2}
 
-/* AUDIO BUTTON */
+
 #audioBtn{position:fixed;top:14px;right:14px;width:38px;height:38px;border:none;border-radius:50%;background:rgba(0,0,0,.1);color:#fff;font-size:18px;cursor:pointer;z-index:999}
 
-/* HEADER VIDEO */
+
 .header{text-align:center;margin-bottom:18px}
 .header video{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--primary);box-shadow:0 4px 15px rgba(0,0,0,.6)}
 .header h1{margin:10px 0 2px;font-size:22px}
@@ -51,12 +51,12 @@ button{width:100%;padding:14px;border-radius:16px;border:none;background:rgba(0,
 </head>
 <body>
 
-<!-- BACKGROUND VIDEO -->
+
 <video id="bgVideo" autoplay muted loop playsinline>
   <source src="https://files.cloudkuimages.guru/videos/ef577a0c4408.mp4" type="video/mp4">
 </video>
 
-<!-- BACKGROUND AUDIO -->
+
 <audio id="bgAudio" autoplay loop>
   <source src="https://files.cloudkuimages.guru/audios/9ca99476e501.mpeg" type="audio/mpeg">
 </audio>
@@ -79,7 +79,7 @@ btn.onclick=()=>{
     <p>Mobile Panel Creator</p>
   </div>
 
-  <!-- LOGIN -->
+  
   <div id="loginGate" class="card">
     <label>Username Login</label>
     <input id="loginUser">
@@ -88,31 +88,31 @@ btn.onclick=()=>{
     <button onclick="checkLogin()">Login</button>
   </div>
 
-  <!-- FORM -->
+  
   <div id="step1" class="card hidden">
     <label>USERNAME PANEL</label>
     <input id="username" oninput="this.value=this.value.toLowerCase()">
     <label>STORAGE</label>
     <select id="paket">
       <option value="">SELECT STORAGE</option>
-    <option value="1024">1 GB</option>
-    <option value="2048">2 GB</option>
-    <option value="3072">3 GB</option>
-    <option value="4096">4 GB</option>
-    <option value="5120">5 GB</option>
-    <option value="6144">6 GB</option>
-    <option valus="7168">7 GB</option>
-    <option value="8192">8 GB</option>
-    <option value="9216">9 GB</option>
-    <option value="10240">10 GB</option>
-    <option value="0">UNLIMITED</option>
+      <option value="1024">1 GB</option>
+      <option value="2048">2 GB</option>
+      <option value="3072">3 GB</option>
+      <option value="4096">4 GB</option>
+      <option value="5120">5 GB</option>
+      <option value="6144">6 GB</option>
+      <option value="7168">7 GB</option>
+      <option value="8192">8 GB</option>
+      <option value="9216">9 GB</option>
+      <option value="10240">10 GB</option>
+      <option value="0">UNLIMITED</option>
     </select>
     <button onclick="buatPanel()">Create Panel</button>
     <button class="btn-outline" onclick="logout()">Logout</button>
   </div>
 
   <div id="loadingStep" class="card hidden">
-    <p style="text-align:center">Processing Mbud...</p>
+    <p style="text-align:center">Processing...</p>
   </div>
 
   <div id="step2" class="card hidden">
@@ -120,23 +120,25 @@ btn.onclick=()=>{
     <p>Username: <span id="uname"></span></p>
     <p>Password: <span id="pass"></span></p>
     <p>RAM: <span id="ram"></span></p>
+    <p>CPU: <span id="cpu"></span></p>
     <button onclick="copyAll()">Copy</button>
-
   </div>
 </div>
+
 <a href="https://whatsapp.com/channel/0029VbBSyLI0gcfGL6Hcgl3b" target="_blank">
-  <button style="padding:15px 5px; border-radius:5px; background:rgba(0,0,0,0.7); color:white; border:none; cursor:pointer;">
+  <button style="padding:15px 5px; border-radius:5px; background:rgba(0,0,0,0.7); color:white; border:none; cursor:pointer; margin-top:10px; width:100%;">
     Informasi Saluran
   </button>
 </a>
 
-<!-- WA FLOAT -->
-<a href="https://wa.me/628811147684?text=Halo%20Saya%20tertarik%20dengan%20Panel" target="_blank" class="wa-float">
+
+<a href="https://wa.me/6281234567890?text=Halo%20Saya%20tertarik%20dengan%20Produk%20Anda" target="_blank" class="wa-float">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
 </a>
+
 <script>
 const LOGIN_KEY="panel_login";
-const LOGIN_TIMESTAMP_KEY="panel_login_time"; // tambahan untuk 24 jam logout
+const LOGIN_TIMESTAMP_KEY="panel_login_time"; 
 const LOGOUT_INTERVAL = 24*60*60*1000; 
 
 const GITHUB_USER  = "rizz857";
@@ -144,9 +146,27 @@ const GITHUB_REPO  = "user-json";
 const GITHUB_FILE  = "user.json";
 const GITHUB_TOKEN = "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";
 
-const DOMAIN="https://publik.pterokudesu.web.id";
-const PLTA="ptla_wzJ2Gi2aTxY1JYLXtqRpI5hpul9QSdZUwluFv7HSIQy";
+const DOMAIN="https://publik.pterokudesu.web.id"; //domain lu co sini
+const PLTA="ptla_yZLiLk2ei70Tgz9BZxtBzHHU3kPdP6cO1vzFdQI3Ofc";//plta lu mbud
 
+// Fungsi untuk mendapatkan nilai CPU berdasarkan storage
+function getCPUValue(storageValue) {
+  const storageMap = {
+    "1024": 120,    // 1GB = 120% CPU
+    "2048": 140,    // 2GB = 140% CPU
+    "3072": 160,    // 3GB = 160% CPU
+    "4096": 180,    // 4GB = 180% CPU
+    "5120": 200,    // 5GB = 200% CPU
+    "6144": 220,    // 6GB = 220% CPU
+    "7168": 240,    // 7GB = 240% CPU
+    "8192": 260,    // 8GB = 260% CPU
+    "9216": 280,    // 9GB = 280% CPU
+    "10240": 300,   // 10GB = 300% CPU
+    "0": 0          // UNLIMITED = 0% CPU
+  };
+  
+  return storageMap[storageValue] || 100; // Default 100% jika tidak ditemukan
+}
 
 function checkAutoLogout() {
   const lastLogin = parseInt(localStorage.getItem(LOGIN_TIMESTAMP_KEY)||"0");
@@ -157,19 +177,16 @@ function checkAutoLogout() {
   }
 }
 
-// Panggil setiap load halaman
 checkAutoLogout();
-
 
 if(localStorage.getItem(LOGIN_KEY)==="true"){
   loginGate.classList.add("hidden");
   step1.classList.remove("hidden");
-  // update timestamp jika belum ada
+  
   if(!localStorage.getItem(LOGIN_TIMESTAMP_KEY)){
     localStorage.setItem(LOGIN_TIMESTAMP_KEY, Date.now());
   }
 }
-
 
 async function getGithubUsers(){
   const res = await fetch(
@@ -180,7 +197,6 @@ async function getGithubUsers(){
   return JSON.parse(atob(data.content));
 }
 
-
 async function checkLogin(){
   try{
     const users = await getGithubUsers();
@@ -190,19 +206,18 @@ async function checkLogin(){
     if(!ok) return alert("Login salah");
 
     localStorage.setItem(LOGIN_KEY,"true");
-    localStorage.setItem(LOGIN_TIMESTAMP_KEY, Date.now()); // simpan waktu login
+    localStorage.setItem(LOGIN_TIMESTAMP_KEY, Date.now()); 
+    
     loginGate.classList.add("hidden");
     step1.classList.remove("hidden");
   }catch(e){alert("Gagal ambil user")}
 }
-
 
 function logout(){
   localStorage.removeItem(LOGIN_KEY);
   localStorage.removeItem(LOGIN_TIMESTAMP_KEY);
   location.reload();
 }
-
 
 async function buatPanel(){
   if(!username.value||!paket.value) return alert("Lengkapi data");
@@ -211,8 +226,11 @@ async function buatPanel(){
 
   try{
     const u=username.value.toLowerCase();
+    const storageValue = paket.value;
+    const cpuValue = getCPUValue(storageValue);
+    
     const r=await fetch(
-      `https://api.resellergaming.my.id/pterodactyl/addpanel?domain=${DOMAIN}&plta=${PLTA}&username=${u}&ram=${paket.value}&disk=${paket.value}&cpu=0`
+      `https://api.resellergaming.my.id/pterodactyl/addpanel?domain=${DOMAIN}&plta=${PLTA}&username=${u}&ram=${storageValue}&disk=${storageValue}&cpu=${cpuValue}`
     );
     const d=await r.json();
     if(!d.user) throw 0;
@@ -223,7 +241,8 @@ async function buatPanel(){
     email.textContent=d.user.attributes.email;
     uname.textContent=u;
     pass.textContent=u;
-    ram.textContent=paket.value==0?"UNLIMITED":(paket.value/1024)+" GB";
+    ram.textContent=storageValue==0?"UNLIMITED":(storageValue/1024)+" GB";
+    cpu.textContent=cpuValue==0?"0%" : cpuValue + "%";
   }catch{
     alert("Gagal create panel");
     location.reload();
@@ -232,30 +251,32 @@ async function buatPanel(){
 
 function copyAll(){
   navigator.clipboard.writeText(
-`*━━━━━━━━━━━━━━━━*  
-    *📦 DATA PANEL KAMU*  
-*━━━━━━━━━━━━━━━━*  
-  
-*📧 Email:* ${email.innerText}  
-*👤 Username:* ${uname.innerText}  
-*🔐 Password:* ${pass.innerText}  
-*🧠 RAM:* ${ram.innerText}  
-*🌐 Domain:* ${DOMAIN}  
-  
-*━━━━━━━━━━━━━━━━*  
-    *📌 NOTE IMPORTANT*  
-*━━━━━━━━━━━━━━━━*  
-° *PANEL BERLAKU 30 HARI*  
-° *GARANSI 15 HARI*  
-° *DILARANG Pasang SC DDOS*  
-° *NO SEBAR DOMAIN*  
-° *NO SEBAR DATA PANEL*  
-° *CLAIM GARANSI WAJIB AD STRUK!!*
-*━━━━━━━━━━━━━━━━*  
-   *📌 Informasi Lainnya*  
+`╔════════ ❖ ═════════╗
+    📦 𝗗𝗔𝗧𝗔 𝗣𝗔𝗡𝗘𝗟 𝗞𝗔𝗠𝗨
+╚════════ ❖ ═════════╝
+
+📧 𝗘𝗺𝗮𝗶𝗹    : ${email.innerText}
+👤 𝗨𝘀𝗲𝗿𝗻𝗮𝗺𝗲 : ${uname.innerText}
+🔐 𝗣𝗮𝘀𝘀𝘄𝗼𝗿𝗱 : ${pass.innerText}
+🧠 𝗥𝗔𝗠      : ${ram.innerText}
+⚡ 𝗖𝗣𝗨      : ${cpu.innerText}
+🌐 𝗗𝗼𝗺𝗮𝗶𝗻   : ${DOMAIN}
+
+───────✦───────
+📌 𝗡𝗢𝗧𝗘 𝗜𝗠𝗣𝗢𝗥𝗧𝗔𝗡𝗧
+• PANEL BERLAKU **30 HARI**
+• GARANSI **15 HARI**
+• DILARANG pasang SC DDOS
+• DILARANG sebar domain
+• DILARANG sebar data panel
+• CLAIM GARANSI **WAJIB ADA STRUK**
+
+───────✦───────
+📢 𝗜𝗻𝗳𝗼𝗿𝗺𝗮𝘀𝗶 𝗟𝗮𝗶𝗻𝗻𝘆𝗮
 https://whatsapp.com/channel/0029VbBSyLI0gcfGL6Hcgl3b
-*━━━━━━━━━━━━━━━━*  
-> *© Ryu Official*`
+
+───────✦───────
+© Ryu Official`
   );
   alert("Disalin");
 }
